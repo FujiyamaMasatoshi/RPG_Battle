@@ -1,0 +1,4 @@
+# pipでインストールするモジュール
+pygame
+numpy
+torch
