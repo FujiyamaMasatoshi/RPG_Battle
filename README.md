@@ -9,7 +9,8 @@ https://youtu.be/L2V-pbWtrGk
 ## キャラクタ画面を表示させながらのプレイ
 
 ### 初めて起動する際の準備
-ターミナルを起動して、以下のコマンドを打ち込んでください。
+1. Anacondaをインストールしてください。
+2. conda仮想環境を作成するので、ターミナルを起動して、以下のコマンドを打ち込んでください。
 
 ```
 conda create -n env_name python=3.10
@@ -17,13 +18,14 @@ conda activate env_name
 pip install -r requirements.txt
 ```
 
+`env_name`は`conda create -n env_name python=3.10`した時の環境名ですので、適切に決めてください。
+
 ### ゲームの起動方法
 ターミナルで 
 ```
 conda activate env_name
 ```
 と打ち込んで`env_name`を起動させてください。
-`env_name`は`conda create -n env_name python=3.10`した時の環境名
 
 その後、ターミナルで
 ```
@@ -33,7 +35,7 @@ python test_run.py
 ```
 ゲームシチュエーションを選択してください (1, 2, 3, 4)
 ```
-とターミナル上にメッセージが表示されるので、()の中から数字を選んでターミナルに打ち込んでください。`1-4`の数字がゲームシチュエーションを表している`situation01.csv-situation04.csv`に対応しています。
+とターミナル上にメッセージが表示されるので、()の中から数字を選んでターミナルに打ち込んでください。`1-4`の数字がゲームシチュエーションを表している`situation01.csv - situation04.csv`に対応しています。
 
 
 
@@ -48,7 +50,4 @@ python test_run.py
 * キャラクタ選択: キーボードによる数字入力
 * 決定ボタン: スペースキー or エンターキー(リターンキー)
 
-## シミュレーションによる強化学習の実行
-
-後日、強化学習による実装を加える。
 
