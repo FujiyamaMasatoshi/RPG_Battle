@@ -2,22 +2,11 @@
 # initメソッドでゲームsituationを選択できる
 # init in reset()でも同様
 
-from enum import Enum, auto
-import pygame
-from pygame.locals import *
-import sys
 import random
-# random.seed(123)
-import numpy as np
 # np.random.seed(123)
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-import copy
 from collections import deque
 import csv
-import json
 from Character import Character
 from GameState import GameState
 
@@ -421,7 +410,6 @@ class Game():
             return self.State(), reward, done, action, target_id
         elif self.game_state == GameState.TURN_END:
             self.turn_end()
-            
             done = False
             return self.State(), reward, done
         elif self.game_state == GameState.GAME_END:
@@ -433,7 +421,8 @@ class Game():
             done = True
             return self.State(), reward, done, win
     
-     # result_actionを返す
+    
+    # result_actionを返す
     def step_get_log(self, action_flow):
         if self.game_state == GameState.TURN_START:
             self.turn_start()
