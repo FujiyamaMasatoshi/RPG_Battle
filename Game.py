@@ -385,6 +385,7 @@ class Game():
                 
 
     def step(self, action_flow):
+        reward = 0
         if self.game_state == GameState.TURN_START:
             # ターン開始時に現在の味方の数を取得
             self.n_mymembers = self.N_mymember()
@@ -422,7 +423,7 @@ class Game():
             self.turn_end()
             
             done = False
-            return self.State(), self.reward, done
+            return self.State(), reward, done
         elif self.game_state == GameState.GAME_END:
             win = self.game_end()
             if win:
