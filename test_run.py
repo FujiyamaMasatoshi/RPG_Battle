@@ -2,44 +2,23 @@ import pygame
 from pygame.locals import *
 import sys
 import os
-from Game import Game
-from GameState import GameState
-from Character import Character
-from collections import defaultdict, deque
+from env.Game import Game
+from env.GameState import GameState
 
 import pickle
 
 from CommandWindow import *
 
-# BC
-# from BC import *
-
-# # screen サイズ
-# SCREEN_SIZE_WIDTH = 600
-# SCREEN_SIZE_HEIGHT = 1000
-# SCREEN_SIZE = (SCREEN_SIZE_WIDTH, SCREEN_SIZE_HEIGHT)
-
-# # コマンドウィンドウ サイズ
-# CMD_WINDOW_INIT_X = 10  # コマンドウィンドウの左上x座標
-# CMD_WINDOW_INIT_Y = 700  # コマンドウィンドウの左上y座標
-# CMD_WINDOW_WIDTH = 580  # コマンドウィンドウの横幅
-# CMD_WINDOW_HEIGHT = 280  # コマンドウィンドの縦幅
-# COMMAND_WINDOW_RECT = (CMD_WINDOW_INIT_X, CMD_WINDOW_INIT_Y,
-#                        CMD_WINDOW_WIDTH, CMD_WINDOW_HEIGHT)
 
 pygame.font.init()  # フォントの初期化
 font = pygame.font.Font("./ipaexg00401/ipaexg.ttf", 10)
 
-# config = {
-#     "game_situation": 1 # 0, 1, 2,
-# }
 
 def get_game_log():
     # ゲームsituation
     print("ゲームシチュエーションを選択してください (1, 2, 3, 4)")
     situation = int(input())
-    # file_name = f"situation={situation}_expert_data_{name}"
-    # file_dir = "./ExpertData_fromHE/"
+    
     # モジュールの初期化
     pygame.init()  # pygameの初期化
     
@@ -187,20 +166,9 @@ def get_game_log():
                 k += 1
                 
         
-        # for i in range(k):
-            
-        #     # 4枠の幅を計算
-        #     width = int((SCREEN_SIZE_WIDTH-start_x*2)/4)
-        #     rect = pygame.Rect((start_x+width*i, 600, width-10, width-10))
-        #     s_windows.append(StatusWindow(rect))
-        # for i in range(k):
-            
-        #     s_windows[i].draw(screen, "HP: 100")
-        
         # command window
         c_window = CommandWindow(pygame.Rect(COMMAND_WINDOW_RECT))
-        # c_window.draw(screen, "")
-        # c_window.draw(screen, "")
+        
         # # #################
         # # ゲーム状態管理 
         # # #################
@@ -320,29 +288,15 @@ def get_game_log():
                     data = (game.now_character.SIDE, game.now_character.id, state, action, target_id, next_state, reward, done)
                     exp_all.append(data)
                     
-                    # buffer_all.add(game.now_character.SIDE, state, action, target_id, reward, next_state, done, auto=False)
-                    # buffer_enemys_AF.add(game.now_character.SIDE, state, action, target_id, reward, next_state, done, auto=False)
-                    # print("enemy, enenmysAF: addが呼び出されるたび表示")
-                    # # result_action = game.turn_now(action_flow=None)
                     
                     state_turn_now = -1
-                    # _action = result_action[3]
-                    # _target_id = result_action[4]
                     _s = result_action[0]
                     statement = "敵の行動\n"
                     statement += "行動キャラクタ: {}\n".format(game.now_character.name)
-                    # statement += "* action -> {}\n\n".format(game.now_character.ACTION_SET[_action])
-                    # statement += "* target -> {}\n\n".format(game.id_to_name(_target_id, game.characters))
+                    
                     print(_s)
                     statement += _s
-                    # if state_turn_now == 0:
-                    #     statement = "現在の行動キャラクタ: {}\n".format(game.now_character)
-                    # elif state_turn_now == 1:
-                    #     statement += "* action -> {}\n\n".format(game.now_character.ACTION_SET[_action])
-                    # elif state_turn_now == 2:
-                    #     statement += "* target -> {}\n\n".format(game.id_to_name(_target_id, game.characters))
-                    # elif state_turn_now == 3:
-                    #     statement += _s
+                    
                     c_window.draw(screen, statement)
                     state_pop_character = 0
             

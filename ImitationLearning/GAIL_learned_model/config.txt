@@ -1,0 +1,20 @@
+lr_pre_training: {'10': {'action': 0.001, 'target1': 0.001, 'target2': 0.001}, '20': {'action': 0.001, 'target1': 0.001, 'target2': 0.001}, '30': {'action': 0.001, 'target1': 0.001, 'target2': 0.001}, '40': {'action': 0.001, 'target1': 0.001, 'target2': 0.001}}
+lr_generator: {'10': {'action': 1e-05, 'target1': 1e-05, 'target2': 1e-05}, '20': {'action': 1e-05, 'target1': 1e-05, 'target2': 1e-05}, '30': {'action': 1e-05, 'target1': 1e-05, 'target2': 1e-05}, '40': {'action': 1e-05, 'target1': 1e-05, 'target2': 1e-05}}
+argmax_episode: 0
+argmax_interval: 0
+lr_discriminator: {'action': 5e-06, 'target1': 5e-06, 'target2': 5e-06}
+batch_size: 32
+update_interval: 45
+episodes: 20000
+load_init_params_agents: False
+load_init_params_discriminator: False
+several_situation: True
+game_situation: 1
+use_env_reward: True
+negative_point: 2.0
+reward_log: True
+use_real_expertdata: True
+use_enemy_action: True
+pre_training: True
+train_again: False
+n_pre_training: 3000
