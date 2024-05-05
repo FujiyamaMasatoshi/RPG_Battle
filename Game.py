@@ -383,7 +383,7 @@ class Game():
             self.turn_start()
             done = False
             # return done
-            return self.State(), self.reward, done
+            return self.State(), reward, done
         elif self.game_state == GameState.ACTION_ORDER:
             self.action_order()
             done = False
@@ -392,17 +392,25 @@ class Game():
         elif self.game_state == GameState.POP_CHARACTER:
             self.pop_character()
             done = False
-            return self.State(), self.reward, done
+            return self.State(), reward, done
             # return self.state, reward, done
         elif self.game_state == GameState.TURN_NOW:
             # 与える報酬の初期化
             reward = 0
 
+            # ##########
+            # 報酬の計算
+            # ##########
             result_action = self.turn_now(action_flow)
+            s = result_action[0]
+            dmg = result_action[1]
+            rec = result_action[2]
+            valid_action = result_action[5] # valid actionによる報酬 -- 人間らしいミス
             
-            valid_action = result_action[5]
             reward += (2*valid_action - 1)  # (0,1) to (-1, 1)
-            
+            reward += 5*self.IsWin() # win -> 報酬を与える win=5, lose=-5
+            reward += dmg/10
+            reward += rec/5
             
             action = result_action[3]
             target_id = result_action[4]
@@ -541,7 +549,22 @@ class Game():
 
         return mymembers, enemys
 
-    
+    # win=1, lose=-1, else=0
+    def IsWin(self):
+        score = 0
+        n_t1 = 0
+        n_t2 = 0
+        for c in self.alived_characters:
+            if c.SIDE == 0:
+                n_t1 += 1
+            else:
+                n_t2 += 1
+        if n_t1==0: # lose
+            score += -1
+        if n_t2 == 0: # win
+            score += 1
+        return score
+
 
     def turn_start(self):
         self.reward = 0
