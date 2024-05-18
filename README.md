@@ -1,9 +1,13 @@
 # RPG Battle
 マルチプレイヤRPGバトルの環境です。PyTorchを使用した深層強化学習用の環境として作成しました。このリポジトリにはRPGバトルのデモプレイを行うことができます。
 
-実際のデモプレイ動画を以下のURLにて公開しております。
+<!--実際のデモプレイ動画を以下のURLにて公開しております。-->
+<!--https://youtu.be/L2V-pbWtrGk --> 
 
-https://youtu.be/L2V-pbWtrGk
+## デモ動画
+
+https://github.com/FujiyamaMasatoshi/RPG_Battle/assets/168803336/6a8be18e-6d7e-4450-97ae-fc2d39027336
+
 
 
 ## RPGバトルのプレイ方法
