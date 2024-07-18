@@ -105,9 +105,9 @@ pwdコマンドでターミナルから
 python rpg_battle/ImitationLearning/GAIL_test_run.py
 ```
 
-上記のコマンドをターミナルに打ち込むと以下のようなメッセージが出力されます。
-
 (エラーが出る場合は、`requirements.txt`のモジュールを`pip install`していない可能性がありますので、`pip install -r requirements.txt`と実行して必要なモジュールをインストールしてください。)
+
+上記のコマンドをターミナルに打ち込むと以下のようなメッセージが出力されます。
 
 ```
 操作するキャラクタidを選択してください [10, 20, 30, 40, a]
