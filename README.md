@@ -4,6 +4,10 @@
 <!--実際のデモプレイ動画を以下のURLにて公開しております。-->
 <!--https://youtu.be/L2V-pbWtrGk --> 
 
+この環境は、以下の研究で使用するために作成しました。
+DEIM2024: https://confit.atlas.jp/guide/event-img/deim2024/T5-C-7-02/public/pdf?type=in
+
+
 ## デモ動画
 
 https://github.com/FujiyamaMasatoshi/RPG_Battle/assets/168803336/6a8be18e-6d7e-4450-97ae-fc2d39027336
