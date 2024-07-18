@@ -67,7 +67,11 @@ python test_run.py
 入力された数字はメッセージウィンドウに表示されますので、数字を入力してアクションやターゲットを選択したり、決定するまでは入力した数字をバックスペースキーから削除したりすることができます。
 
 ## 深層強化学習&模倣学習によって学習したAIとの共闘プレイ方法
+**`/ImitationLearning`にある`GAIL_test_run.py`がAIとの共闘プレイプログラムです。(`python`コマンドで実行してください)**
+
+### AI共闘プログラムの起動方法
 ターミナルを立ち上げてconda仮想環境の`env_name`を起動します。
+(`env_name`は`requirements.txt`を`pip install -r requirements.txt`をした環境です。)
 
 ```
 conda activate env_name
@@ -76,8 +80,9 @@ conda activate env_name
 `rpg_battle`のディレクトリまでcdコマンドで移動してください。
 
 ```
-cd /your/home/directory/.../rpg_battle
+cd /path/to/your/directory/.../rpg_battle
 ```
+
 `python rpg_battle/ImitationLearning/GAIL_test_run.py`は自身のディレクトリに変更してください。
 
 `rpg_battle/ImitationLearning/GAIL_test_run.py`を起動させるため以下のプロンプトを打ち込んでください。
@@ -86,7 +91,8 @@ pwdコマンドでターミナルから
 ```
 /Users/.../rpg_battle
 ```
-となっているのを確認できたら以下のコマンドをターミナルに打ち込んでAIとの共闘プレイを行います。
+となっているのを確認できたら、
+以下のコマンドをターミナルに打ち込んでAIとの共闘プレイを行います。
 
 ```
 python ./ImitationLearning/GAIL_test_run.py
