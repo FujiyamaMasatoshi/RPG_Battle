@@ -102,7 +102,7 @@ pwdコマンドでターミナルから
 `GAIL_test_run.py`を以下のプログラムをターミナルに打ち込み起動させます。
 
 ```
-python rpg_battle/ImitationLearning/GAIL_test_run.py
+python RPG_Battle/ImitationLearning/GAIL_test_run.py
 ```
 
 (エラーが出る場合は、`requirements.txt`のモジュールを`pip install`していない可能性がありますので、`pip install -r requirements.txt`と実行して必要なモジュールをインストールしてください。)
