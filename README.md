@@ -5,6 +5,7 @@
 <!--https://youtu.be/L2V-pbWtrGk --> 
 
 この環境は、以下の研究で使用するために作成しました。
+
 DEIM2024: https://confit.atlas.jp/guide/event-img/deim2024/T5-C-7-02/public/pdf?type=in
 
 
@@ -73,7 +74,7 @@ python test_run.py
 ## 深層強化学習&模倣学習によって学習したAIとの共闘プレイ方法
 **`/ImitationLearning`にある`GAIL_test_run.py`がAIとの共闘プレイプログラムです。(`python`コマンドで実行してください)**
 
-### AI共闘プログラムの起動方法
+<!-- ### AI共闘プログラムの起動方法
 ターミナルを立ち上げてconda仮想環境の`env_name`を起動します。
 (`env_name`は`requirements.txt`を`pip install -r requirements.txt`をした環境です。)
 
@@ -96,10 +97,12 @@ pwdコマンドでターミナルから
 /Users/.../rpg_battle
 ```
 となっているのを確認できたら、
-以下のコマンドをターミナルに打ち込んでAIとの共闘プレイを行います。
+以下のコマンドをターミナルに打ち込んでAIとの共闘プレイを行います。 -->
+
+`GAIL_test_run.py`を以下のプログラムをターミナルに打ち込み起動させます。
 
 ```
-python ./ImitationLearning/GAIL_test_run.py
+python rpg_battle/ImitationLearning/GAIL_test_run.py
 ```
 
 上記のコマンドをターミナルに打ち込むと以下のようなメッセージが出力されます。
